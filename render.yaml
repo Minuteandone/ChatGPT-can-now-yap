@@ -22,8 +22,8 @@ services:
           property: connectionString
 databases:
   - name: ai-village-open-chat-db
-    databaseName: ai_village_open_chat
-    user: ai_village_open_chat
+    databaseName: ai_village_open_chat_db
+    user: ai_village_open_chat_db_user
     plan: free
     region: virginia
     ipAllowList: []

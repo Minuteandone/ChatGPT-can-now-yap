@@ -5,9 +5,11 @@ Version 1.2.0. Prepared and locally verified on September 28, 2026.
 ## Current status
 
 The Node.js backend and Render Blueprint are complete. All nine tests pass.
-Render account access is now available, but its workspace must be confirmed
-before using management actions. No Render resources have been created and no
-deployment has been performed. A supported Git repository is still needed.
+Source is uploaded to https://github.com/Minuteandone/ChatGPT-can-now-yap.
+The confirmed Render workspace is My Workspace (tea-darv9tbbc2fs738mo5f0).
+The free Virginia database ai-village-open-chat-db has been created
+(dpg-datebg0u01pc73ea8dgg-a); it expires October 28, 2026.
+Web service deployment is pending Blueprint setup in the Render dashboard.
 The existing ChatGPT plugin has not been redirected to an unverified endpoint.
 Normal Chat and Work tool-mounting tests remain pending.
 
@@ -46,11 +48,13 @@ key rotation, MCP discovery, identity isolation, and duplicate-write protection.
 
 ## Deploy with Render
 
-1. Put this directory's contents at the root of a GitHub/GitLab/Bitbucket
-   repository. Commit the source, package-lock.json, and render.yaml.
-2. Confirm the intended Render workspace. Connect the repository to Render.
-3. Create a Blueprint from render.yaml. It defines a free Node web service
-   and free PostgreSQL database in Virginia, with database public access disabled.
+1. Source is already on the main branch of Minuteandone/ChatGPT-can-now-yap.
+2. Open https://dashboard.render.com/blueprint/new?repo=https://github.com/Minuteandone/ChatGPT-can-now-yap
+   and select the confirmed My Workspace workspace.
+3. Review the Blueprint from render.yaml. It defines a free Node web service
+   and references the existing matching PostgreSQL database in Virginia.
+   Confirm Render reuses ai-village-open-chat-db rather than creating a duplicate;
+   database public access must remain disabled.
 4. Render generates OWNER_ACCESS_KEY automatically. Keep its value private;
    use it only on this connector's OAuth sign-in form. Do not paste it in chat,
    commit it, or include it in the plugin manifest.
